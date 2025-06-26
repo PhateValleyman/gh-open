@@ -1,0 +1,41 @@
+
+.TH GH-OPEN 1 "June 2025" "v1.0" "User Commands"
+.SH NAME
+gh-open \- Open GitHub/GitLab/Bitbucket repo/file in browser from terminal
+.SH SYNOPSIS
+.B gh open
+[\-r REMOTE] [\-b BRANCH] [\-n] [\-v] [\-h] [PATH]
+.SH DESCRIPTION
+gh-open is a Bash tool that constructs and opens the appropriate web URL to a Git-hosted repository location based on current directory or given file path.
+It supports GitHub, GitLab, Bitbucket and generic remotes.
+
+It works even if you are outside the Git repository, as long as the path argument points to a file or folder within a Git repo.
+
+.SH OPTIONS
+.TP
+.B \-r <remote>
+Specify the Git remote to use (default: tracking remote, or "origin").
+.TP
+.B \-b <branch>
+Specify branch or commit hash to open.
+.TP
+.B \-n
+Dry run: print the URL instead of opening it.
+.TP
+.B \-v
+Print version info.
+.TP
+.B \-h
+Print help message.
+.SH EXAMPLES
+.TP
+Open current folder in browser:
+.B gh open
+.TP
+Open specific file:
+.B gh open src/main.c
+.TP
+Dry-run with branch override:
+.B gh open -n -b develop README.md
+.SH AUTHOR
+PhateValleyman <Jonas.Ned@outlook.com>
